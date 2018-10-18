@@ -4,12 +4,14 @@ ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
 require 'bundler/setup'
 Bundler.require(:default)
 
-require 'dotenv/load' # setup enviroment
+# require 'dotenv/load' # setup enviroment
 
 # ensure lib path is loaded
 lib_dir = File.expand_path('./lib')
 $:.unshift(lib_dir) unless $:.include?(lib_dir)
 
 require 'karminer'
+require 'pry'
+binding.pry
 
 # Miner entry point
